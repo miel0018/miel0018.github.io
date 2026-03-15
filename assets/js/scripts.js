@@ -1,7 +1,7 @@
 const playlist = [
     { title: "16 Mirrors", artist: "Alex G", src: "assets/musics/16mirrors.mp3", cover: "assets/images/16mirrors.jpg" },
     { title: "Nuts", artist: "Lil Peep", src: "assets/musics/nuts.mp3", cover: "assets/images/nuts.jpg" },
-    { title: "August 10", artist: "Khruangbin", src: "assets/musics/august10.mp3", cover: "assets/images/august10.jpg" }
+    { title: "August 10", artist: "Julie Doiron", src: "assets/musics/august10.mp3", cover: "assets/images/august10.jpg" }
 ];
 
 let currentTrack = 0;
