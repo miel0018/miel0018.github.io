@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div id="overlay" onclick="startExperience()">
+        <p class="enter-text">Click to enter</p>
+    </div>
+
+    <audio id="bg-audio" loop></audio>
+
+    <div class="container blurred" id="main-content">
+        
+        <div class="header">
+            <div class="avatar-wrapper">
+                <img src="https://cdn.discordapp.com/attachments/1264928152665456690/1482426597666717938/91a8468f7779f0582da3907e9eaa4b6c.jpg?ex=69b6e8db&is=69b5975b&hm=c6103948a4e2813a316daef871628525f255412ba2d90a12dcf45e6678443d2a&" alt="Avatar" class="avatar">
+                <div id="discord-status" class="status-dot"></div>
+            </div>
+            <div class="title-area">
+                <h1>Hi, i'm Miel</h1>
+                <p>welcome to my website</p>
+            </div>
+        </div>
+
+        <div class="birthday-box">
+            <span>🎂</span> 
+            <span class="highlight">20/03</span> 
+            <span id="countdown" class="countdown-text"></span>
+        </div>
+
+        <div class="main-music-card">
+            <input type="checkbox" id="play-toggle" hidden />
+            <div class="track-info">
+                <div class="album-art" id="album-art"></div>
+                
+                <div class="track-details">
+                    <div class="track-title" id="track-title">Loading...</div>
+                    <div class="artist-name" id="artist-name">...</div>
+                </div>
+                <div class="volume-bars" id="volume-animation">
+                    <div class="bar" style="--delay:0s"></div>
+                    <div class="bar" style="--delay:0.1s"></div>
+                    <div class="bar" style="--delay:0.2s"></div>
+                    <div class="bar" style="--delay:0.3s"></div>
+                    <div class="bar" style="--delay:0.4s"></div>
+                </div>
+            </div>
+            <div class="playback-controls">
+                <div class="time-info">
+                    <span id="current-time">0:00</span>
+                    <span id="duration-time">0:00</span>
+                </div>
+                <div class="progress-bar" id="progress-container">
+                    <div class="progress-fill" id="progress-fill"></div>
+                    <div class="progress-handle" id="progress-handle"></div>
+                </div>
+                <div class="button-row">
+                    <div class="main-control-btns">
+                        <button class="control-button" onclick="prevTrack()">
+                            <svg width="22" height="22" fill="currentColor" viewBox="0 0 16 16"><path d="M.5 3.5A.5.5 0 0 0 0 4v8a.5.5 0 0 0 1 0V8.753l6.267 3.636c.54.313 1.233-.066 1.233-.697v-2.94l6.267 3.636c.54.314 1.233-.065 1.233-.696V4.308c0-.63-.693-1.01-1.233-.696L8.5 7.248v-2.94c0-.63-.692-1.01-1.233-.696L1 7.248V4a.5.5 0 0 0-.5-.5"/></svg>
+                        </button>
+                        <label for="play-toggle" class="control-button play-pause-button" onclick="togglePlay()">
+                            <svg class="icon-play" width="30" height="30" fill="currentColor" viewBox="0 0 16 16"><path d="M11.596 8.697l-6.363 3.692c-.54.314-1.233-.065-1.233-.696V4.308c0-.63.693-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/></svg>
+                            <svg class="icon-pause" width="30" height="30" fill="currentColor" viewBox="0 0 16 16"><path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5m5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5"/></svg>
+                        </label>
+                        <button class="control-button" onclick="nextTrack()">
+                            <svg width="22" height="22" fill="currentColor" viewBox="0 0 16 16"><path d="M15.5 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V8.753l-6.267 3.636c-.54.313-1.233-.066-1.233-.697v-2.94l-6.267 3.636C.693 12.703 0 12.324 0 11.693V4.308c0-.63.693-1.01 1.233-.696L7.5 7.248v-2.94c0-.63.693-1.01 1.233-.696L15 7.248V4a.5.5 0 0 1 .5-.5"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>About me</h2>
+        <p>Just a chill guy</p>
+        <p>12:00 for me is <span id="local-time" class="highlight">...</span> for you.</p> 
+        <h2>My interests</h2>
+        <ul class="interests-list">
+        <li>study</li>
+        <li>programming</li>
+        </ul>
+
+        <ul class="contacts">
+            <a href="https://discord.gg/tskcommunity" target="_blank">
+                <button class="uiverse-button dc-style">
+                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="btn-icon"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286z"/></svg>
+                    <p class="text">Tsk community</p>
+                </button>
+            </a>
+            <a href="https://www.roblox.com/users/3792532839/profile" target="_blank">
+                <button class="uiverse-button rb-style">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="btn-icon">
+                        <path d="M18.5 24L0 18.5L5.5 0L24 5.5L18.5 24Z"/>
+                    </svg>
+                    <p class="text">My roblox profile</p>
+                </button>
+            </a>
+            <a href="https://www.tiktok.com/@kajotakajotakajota" target="_blank">
+                <button class="uiverse-button tt-style">
+                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" class="btn-icon"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.17-2.89-.6-4.13-1.46-.77-.53-1.43-1.19-1.93-1.97V15.5c-.01 1.61-.41 3.23-1.32 4.54-1.5 2.13-4.15 3.32-6.73 2.94-2.23-.33-4.22-1.85-5.11-3.95-1.05-2.52-.46-5.71 1.51-7.53 1.4-1.29 3.31-1.91 5.2-1.7v4.11c-1.07-.15-2.22.11-3.01.89-.86.84-1.01 2.21-.45 3.23.51.92 1.54 1.5 2.59 1.49 1.48-.01 2.72-1.31 2.72-2.78V.02z"/></svg>
+                    <p class="text">My tiktok profile</p>
+                </button>
+            </a>
+        </ul>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
