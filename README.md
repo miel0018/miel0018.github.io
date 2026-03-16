@@ -1,4 +1,6 @@
-## Hi there 👋
+my own website :)
+
+I'll be buying a domain soon 
 
 <!--
 **miel0018/miel0018** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
