@@ -8,6 +8,14 @@
 </head>
 <body>
 
+    <div class="stats-mini-box">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+            <circle cx="12" cy="12" r="3"></circle>
+        </svg>
+        <span id="view-count-number">0</span>
+    </div>
+
     <div id="overlay" onclick="startExperience()">
         <p class="enter-text">Click to enter</p>
     </div>
@@ -15,7 +23,6 @@
     <audio id="bg-audio" loop></audio>
 
     <div class="container blurred" id="main-content">
-        
         <div class="header">
             <div class="avatar-wrapper">
                 <img src="https://cdn.discordapp.com/attachments/1264928152665456690/1482426597666717938/91a8468f7779f0582da3907e9eaa4b6c.jpg?ex=69b6e8db&is=69b5975b&hm=c6103948a4e2813a316daef871628525f255412ba2d90a12dcf45e6678443d2a&" alt="Avatar" class="avatar">
@@ -28,8 +35,13 @@
         </div>
 
         <div class="birthday-box">
-            <span>🎂</span> 
-            <span class="highlight">20/03</span> 
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="8" width="18" height="4" rx="1" ry="1"></rect>
+                <path d="M12 8v13"></path>
+                <path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"></path>
+                <path d="M7 8V6a2 2 0 0 1 2-2c.5 0 .9.2 1.2.5l2 2a1 1 0 0 0 1.6 0l2-2A2 2 0 0 1 17 6v2"></path>
+            </svg>
+            <span class="highlight">03/20</span> 
             <span id="countdown" class="countdown-text"></span>
         </div>
 
@@ -37,12 +49,11 @@
             <input type="checkbox" id="play-toggle" hidden />
             <div class="track-info">
                 <div class="album-art" id="album-art"></div>
-                
                 <div class="track-details">
                     <div class="track-title" id="track-title">Loading...</div>
                     <div class="artist-name" id="artist-name">...</div>
                 </div>
-                <div class="volume-bars" id="volume-animation">
+                <div class="volume-bars">
                     <div class="bar" style="--delay:0s"></div>
                     <div class="bar" style="--delay:0.1s"></div>
                     <div class="bar" style="--delay:0.2s"></div>
@@ -110,6 +121,6 @@
         </ul>
     </div>
 
-    <script src="assets/js/scripts.js"></script>
+    <script type="module" src="assets/js/scripts.js"></script>
 </body>
 </html>
