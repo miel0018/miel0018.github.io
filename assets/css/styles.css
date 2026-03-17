@@ -82,7 +82,7 @@ p { margin: 0 0 10px 0; line-height: 1.6; font-size: 15px; }
 .interests-list li::before { content: "•"; position: absolute; left: 0; color: var(--text-highlight); font-weight: bold; }
 
 .stats-mini-box {
-    position: absolute; /* Mudado de fixed para absolute para não seguir o scroll */
+    position: absolute; 
     top: 20px; 
     right: 20px;
     background: var(--card-bg); 
