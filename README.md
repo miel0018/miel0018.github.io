@@ -1,6 +1,12 @@
 my own website :)
 
-I'll be buying a domain soon 
+I plan to make only 2 final updates
+
+1: A system where you choose your own music
+
+2: Custom domain
+
+After that I will forget ts☠️
 
 <!--
 **miel0018/miel0018** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
